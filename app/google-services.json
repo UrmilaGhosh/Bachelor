@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "836183448039",
+    "project_id": "bachelor-urmi",
+    "storage_bucket": "bachelor-urmi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836183448039:android:f13931149b6df665120542",
+        "android_client_info": {
+          "package_name": "com.dev.app.bachelor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "836183448039-4nkbaa8b0u58gvrrvi5sg7ga7396n724.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCybuhOHGEEQFwXusD_BIintlUQ2lVQ6fY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "836183448039-4nkbaa8b0u58gvrrvi5sg7ga7396n724.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
