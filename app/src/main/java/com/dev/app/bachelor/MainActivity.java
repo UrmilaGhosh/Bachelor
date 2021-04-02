@@ -216,15 +216,15 @@ public class MainActivity extends AppCompatActivity {
 
     //main page three dot menu
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     //click handler on any menu button
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch(item.getItemId()){
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
             case R.id.main_menu_notification:
                 SendUserToNotificationActivity();
                 return true;
@@ -237,7 +237,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.main_menu_help:
                 SendUserToSupportActivity();
                 return true;
-            default: return super.onOptionsItemSelected(item);
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 
@@ -435,7 +436,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 double UserCashAmount = 0.0, UserCashInAmount = 0.0;
                 if (snapshot.exists()) {
-                    for(DataSnapshot data: snapshot.getChildren()){
+                    for (DataSnapshot data : snapshot.getChildren()) {
                         UserCashAmount += Double.parseDouble(data.child("amount").getValue().toString());
 
                         if (data.child("type").getValue().toString().equals("cash_in")) {
@@ -452,7 +453,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         double GroupTotalCost = 0.0;
                         if (snapshot.exists()) {
-                            for(DataSnapshot data: snapshot.getChildren()){
+                            for (DataSnapshot data : snapshot.getChildren()) {
                                 GroupTotalCost += Double.parseDouble(data.child("amount").getValue().toString());
                             }
                         }
@@ -473,7 +474,7 @@ public class MainActivity extends AppCompatActivity {
                                             double y = Double.parseDouble(snapshot.child("counter").child(String.valueOf(count)).child("lunch").getValue().toString());
                                             double z = Double.parseDouble(snapshot.child("counter").child(String.valueOf(count)).child("dinner").getValue().toString());
 
-                                            for (DataSnapshot data: snapshot.child("data").getChildren()) {
+                                            for (DataSnapshot data : snapshot.child("data").getChildren()) {
                                                 double a = Double.parseDouble(snapshot.child("data").child(data.getKey()).child(String.valueOf(count)).child("breakfast").getValue().toString());
                                                 double b = Double.parseDouble(snapshot.child("data").child(data.getKey()).child(String.valueOf(count)).child("lunch").getValue().toString());
                                                 double c = Double.parseDouble(snapshot.child("data").child(data.getKey()).child(String.valueOf(count)).child("dinner").getValue().toString());
@@ -623,5 +624,3 @@ public class MainActivity extends AppCompatActivity {
         startActivity(cashInOutIntent);
     }
 }
-
-//Main Activity
